@@ -1,29 +1,8 @@
 {
   "projects": {
-    "default": "ele-convl-manager"
+    "default": "farmbetter-v2-review"
   },
   "targets": {
-    "elewa-conv-learning-prod": {
-      "hosting": {
-        "convl-manager": [
-          "elewa-conv-learning-prod"
-        ]
-      }
-    },
-    "enabel-elearning": {
-      "hosting": {
-        "convl-manager": [
-          "enabel-elearning"
-        ]
-      }
-    },
-    "ele-convl-manager-7cd0a": {
-      "hosting": {
-        "convl-manager": [
-          "ele-convl-manager-7cd0a"
-        ]
-      }
-    },
     "farmbetter-prod": {
       "hosting": {
         "convl-manager": [
@@ -31,24 +10,10 @@
         ]
       }
     },
-    "elewa-clm-test": {
+    "farmbetter-v2-review": {
       "hosting": {
         "convl-manager": [
-          "elewa-clm-test"
-        ]
-      }
-    },
-    "ele-convl-manager": {
-      "hosting": {
-        "convl-manager": [
-          "ele-convl-manager"
-        ]
-      }
-    },
-    "farmbetter-review": {
-      "hosting": {
-        "convl-manager": [
-          "farmbetter-review"
+          "farmbetter-v2-review-goomza"
         ]
       }
     }

@@ -8,7 +8,7 @@
     ]
   },
   "hosting": {
-    "target": "convl-manager",
+    "target": "goomza-conv-manager",
     "public": "dist/apps/conv-learning-manager",
     "predeploy": [
       "nx build conv-learning-manager --skip-nx-cache --prod"
@@ -37,11 +37,9 @@
     },
     "firestore": {
       "port": 8080,
-      "rules": "firestore.rules"
     },
     "storage": {
       "port": 9199,
-      "rules": "storage.rules"
     },
     "singleProjectMode": true,
     "auth": {

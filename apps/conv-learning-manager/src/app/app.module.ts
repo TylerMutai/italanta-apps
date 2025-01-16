@@ -25,7 +25,6 @@ import { AppConfigurationModule } from '@app/elements/base/configuration';
 import { DateConfigurationModule } from '@app/elements/base/date-time';
 import { FirebaseConfigurationModule } from '@app/elements/base/firebase';
 
-
 import { UserStateModule } from '@app/state/user';
 import { StoriesStateModule } from '@app/state/convs-mgr/stories';
 import { LearnersStateModule } from '@app/state/convs-mgr/learners';
@@ -45,26 +44,27 @@ import { StateSurveysModule } from '@app/state/convs-mgr/conversations/surveys';
 import { VariablesModule } from '@app/state/convs-mgr/variables';
 import { MessageTemplatesModule } from '@app/private/state/message-templates';
 
-
-import  { EnvironmentConfigModule } from '@app/admin/config/environment-config'
+import { EnvironmentConfigModule } from '@app/admin/config/environment-config';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 
-import { environment } from '../environments/environment';
-
+import { environment } from '../environments/environment.prod';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule, BrowserAnimationsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     GooglePlaceModule,
-    
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule, AngularFirestoreModule, AngularFireFunctionsModule, NgFireModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireFunctionsModule,
+    NgFireModule,
     AngularFireAnalyticsModule,
     HttpClientModule,
-
 
     MaterialBricksRootModule.forRoot(),
 
@@ -74,7 +74,10 @@ import { environment } from '../environments/environment';
 
     AppConfigurationModule.forRoot(environment, environment.production),
     DateConfigurationModule.forRoot(),
-    FirebaseConfigurationModule.forRoot(!environment.production, environment.useEmulators),
+    FirebaseConfigurationModule.forRoot(
+      !environment.production,
+      environment.useEmulators
+    ),
     MultiLangModule.forRoot(true),
     // UserNavModule,
 
@@ -108,12 +111,12 @@ import { environment } from '../environments/environment';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
     IntercomModule.forRoot({
-      appId: 'jvwszj2k', 
-      updateOnRouterChange: true // will automatically run `update` on router event changes. Default: `false`
-    })
+      appId: 'jvwszj2k',
+      updateOnRouterChange: true, // will automatically run `update` on router event changes. Default: `false`
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
