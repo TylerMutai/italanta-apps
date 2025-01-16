@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 
+import firebase from 'firebase/compat/app';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   AngularFirestore,
@@ -10,7 +11,6 @@ import {
 import { User, UserProfile, Roles } from '@iote/bricks';
 import { ToastService, Logger } from '@iote/bricks-angular';
 import { AuthEnvironment } from '@iote/cqrs';
-import firebase from 'firebase/compat';
 
 /**
  * Authentication Service
