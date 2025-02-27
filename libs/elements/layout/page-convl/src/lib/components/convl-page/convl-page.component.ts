@@ -32,11 +32,11 @@ export class ConvlPageComponent implements OnInit
       app_id: 'jvwszj2k',
       // Supports all optional configuration.
       widget: {
-        "activator": "#intercom" 
+        "activator": "#intercom"
       }
     });
   }
-  
+
   setMenuStatus($event: boolean) {
     this.isMenuOpen = $event
   }
