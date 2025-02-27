@@ -23,7 +23,7 @@ export class FirebaseConfigurationModule {
     return {
       ngModule: FirebaseConfigurationModule,
       providers: [
-        { provide: REGION, useValue: 'europe-west1' },
+        { provide: REGION, useValue: 'europe-west3' },
         // https://github.com/angular/angularfire/blob/master/docs/emulators/emulators.md
         {
           provide: USE_FUNCTIONS_EMULATOR,
