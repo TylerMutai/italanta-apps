@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { AuthService } from './auth/services/auth.service';
-import { BackendService } from './backend/backend.service';
+import { AuthService } from './auth';
+import { BackendService } from './backend';
 
 /**
  * NgFire Module
@@ -11,6 +11,6 @@ import { BackendService } from './backend/backend.service';
 @NgModule({
   imports: [],
   providers: [AuthService, BackendService],
-  exports: []
+  exports: [],
 })
-export class NgFireModule { }
+export class NgFireModule {}

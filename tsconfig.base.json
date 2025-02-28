@@ -10,7 +10,10 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -50,18 +53,24 @@
       "@app/elements/layout/modals": [
         "libs/elements/layout/modals/src/index.ts"
       ],
-      "@app/elements/layout/page": ["libs/elements/layout/page/src/index.ts"],
+      "@app/elements/layout/page": [
+        "libs/elements/layout/page/src/index.ts"
+      ],
       "@app/elements/layout/page-convl": [
         "libs/elements/layout/page-convl/src/index.ts"
       ],
-      "@app/elements/layout/toast": ["libs/elements/layout/toast/src/index.ts"],
+      "@app/elements/layout/toast": [
+        "libs/elements/layout/toast/src/index.ts"
+      ],
       "@app/elements/layout/user-menu": [
         "libs/elements/layout/user-menu/src/index.ts"
       ],
       "@app/elements/nav/convl/breadcrumbs": [
         "libs/elements/nav/convl/breadcrumbs/src/index.ts"
       ],
-      "@app/features/analytics": ["libs/features/analytics/src/index.ts"],
+      "@app/features/analytics": [
+        "libs/features/analytics/src/index.ts"
+      ],
       "@app/features/app/auth/login": [
         "libs/features/app/auth/login/src/index.ts"
       ],
@@ -200,14 +209,18 @@
       "@app/features/convs-mgr/stories/home": [
         "libs/features/convs-mgr/stories/home/src/index.ts"
       ],
-      "@app/features/monitoring": ["libs/features/monitoring/src/index.ts"],
+      "@app/features/monitoring": [
+        "libs/features/monitoring/src/index.ts"
+      ],
       "@app/functions/analytics/metabase": [
         "libs/functions/analytics/metabase/src/index.ts"
       ],
       "@app/functions/analytics/progress/main": [
         "libs/functions/analytics/progress/main/src/index.ts"
       ],
-      "@app/functions/base": ["libs/functions/base/src/index.ts"],
+      "@app/functions/base": [
+        "libs/functions/base/src/index.ts"
+      ],
       "@app/functions/bot-engine": [
         "libs/functions/bot-engine/main/src/index.ts"
       ],
@@ -226,11 +239,15 @@
       "@app/functions/bot-process-handler": [
         "libs/functions/bot-process-handler/src/index.ts"
       ],
-      "@app/functions/bot-users": ["libs/functions/bot-users/src/index.ts"],
+      "@app/functions/bot-users": [
+        "libs/functions/bot-users/src/index.ts"
+      ],
       "@app/functions/convs-mgr/story-editor//check-story-for-errors": [
         "libs/functions/convs-mgr/story-editor/check-story-for-errors/src/index.ts"
       ],
-      "@app/functions/user": ["libs/functions/user/src/index.ts"],
+      "@app/functions/user": [
+        "libs/functions/user/src/index.ts"
+      ],
       "@app/libs/private/features/convs-mgr/stories/blocks/library/cmi5-block": [
         "libs/libs/private/features/convs-mgr/stories/blocks/library/cmi5-block/src/index.ts"
       ],
@@ -243,7 +260,9 @@
       "@app/model/convs-mgr/bot-modules": [
         "libs/model/convs-mgr/bot-modules/src/index.ts"
       ],
-      "@app/model/convs-mgr/bots": ["libs/model/convs-mgr/bots/src/index.ts"],
+      "@app/model/convs-mgr/bots": [
+        "libs/model/convs-mgr/bots/src/index.ts"
+      ],
       "@app/model/convs-mgr/classroom": [
         "libs/model/convs-mgr/classroom/src/index.ts"
       ],
@@ -289,14 +308,24 @@
       "@app/model/finance/payments": [
         "libs/model/finance/payments/src/index.ts"
       ],
-      "@app/model/finance/sales": ["libs/model/finance/sales/src/index.ts"],
+      "@app/model/finance/sales": [
+        "libs/model/finance/sales/src/index.ts"
+      ],
       "@app/model/layout/ital-breadcrumb": [
         "libs/model/layout/ital-breadcrumb/src/index.ts"
       ],
-      "@app/model/layout/toast": ["libs/model/layout/toast/src/index.ts"],
-      "@app/model/organisation": ["libs/model/organisation/main/src/index.ts"],
-      "@app/model/user": ["libs/model/user/base/src/index.ts"],
-      "@app/model/user/bot-users": ["libs/model/user/bot-users/src/index.ts"],
+      "@app/model/layout/toast": [
+        "libs/model/layout/toast/src/index.ts"
+      ],
+      "@app/model/organisation": [
+        "libs/model/organisation/main/src/index.ts"
+      ],
+      "@app/model/user": [
+        "libs/model/user/base/src/index.ts"
+      ],
+      "@app/model/user/bot-users": [
+        "libs/model/user/bot-users/src/index.ts"
+      ],
       "@app/private/elements/convs-mgr/access-control": [
         "libs/private/elements/convs-mgr/access-control/src/index.ts"
       ],
@@ -378,11 +407,15 @@
       "@app/private/state/user/base": [
         "libs/private/state/user/base/src/index.ts"
       ],
-      "@app/reply-message-block": ["libs/reply-message-block/src/index.ts"],
+      "@app/reply-message-block": [
+        "libs/reply-message-block/src/index.ts"
+      ],
       "@app/state/convs-mgr/analytics": [
         "libs/state/convs-mgr/analytics/src/index.ts"
       ],
-      "@app/state/convs-mgr/bots": ["libs/state/convs-mgr/bots/src/index.ts"],
+      "@app/state/convs-mgr/bots": [
+        "libs/state/convs-mgr/bots/src/index.ts"
+      ],
       "@app/state/convs-mgr/channels": [
         "libs/state/convs-mgr/channels/src/index.ts"
       ],
@@ -434,30 +467,67 @@
       "@app/state/convs-mgr/variables": [
         "libs/state/convs-mgr/variables/src/index.ts"
       ],
-      "@app/state/file": ["libs/state/file/store/src/index.ts"],
-      "@app/state/file/whatsapp": ["libs/state/file/whatsapp/src/index.ts"],
-      "@app/state/organisation": ["libs/state/organisation/main/src/index.ts"],
-      "@app/state/user": ["libs/state/user/base/src/index.ts"],
-      "@iote/bricks": ["libs/util/iote/bricks/src/index.ts"],
-      "@iote/bricks-angular": ["libs/util/iote/bricks-angular/src/index.ts"],
-      "@iote/cqrs": ["libs/util/iote/cqrs/src/index.ts"],
-      "@iote/exceptions": ["libs/util/iote/exceptions/src/index.ts"],
+      "@app/state/file": [
+        "libs/state/file/store/src/index.ts"
+      ],
+      "@app/state/file/whatsapp": [
+        "libs/state/file/whatsapp/src/index.ts"
+      ],
+      "@app/state/organisation": [
+        "libs/state/organisation/main/src/index.ts"
+      ],
+      "@app/state/user": [
+        "libs/state/user/base/src/index.ts"
+      ],
+      "@iote/bricks": [
+        "libs/util/iote/bricks/src/index.ts"
+      ],
+      "@iote/bricks-angular": [
+        "libs/util/iote/bricks-angular/src/index.ts"
+      ],
+      "@iote/cqrs": [
+        "libs/util/iote/cqrs/src/index.ts"
+      ],
+      "@iote/exceptions": [
+        "libs/util/iote/exceptions/src/index.ts"
+      ],
       "@iote/local-persistance": [
         "libs/util/iote/local-persistance/src/index.ts"
       ],
-      "@iote/state": ["libs/util/iote/state/src/index.ts"],
-      "@iote/time": ["libs/util/iote/time/src/index.ts"],
-      "@iote/ui-workflows": ["libs/util/iote/ui-workflows/src/index.ts"],
-      "@ngfi/admin-data": ["libs/util/ngfi/admin-data/src/index.ts"],
-      "@ngfi/angular": ["libs/util/ngfi/angular/src/index.ts"],
+      "@iote/state": [
+        "libs/util/iote/state/src/index.ts"
+      ],
+      "@iote/time": [
+        "libs/util/iote/time/src/index.ts"
+      ],
+      "@iote/ui-workflows": [
+        "libs/util/iote/ui-workflows/src/index.ts"
+      ],
+      "@ngfi/admin-data": [
+        "libs/util/ngfi/admin-data/src/index.ts"
+      ],
+      "@ngfi/angular": [
+        "libs/util/ngfi/angular/src/index.ts"
+      ],
       "@ngfi/firestore-qbuilder": [
         "libs/util/ngfi/firestore-qbuilder/src/index.ts"
       ],
-      "@ngfi/functions": ["libs/util/ngfi/functions/src/index.ts"],
-      "@ngfi/infinite-scroll": ["libs/util/ngfi/infinite-scroll/src/index.ts"],
-      "@ngfi/multi-lang": ["libs/util/ngfi/multi-lang/src/index.ts"],
-      "@ngfi/state": ["libs/util/ngfi/state/src/index.ts"]
+      "@ngfi/functions": [
+        "libs/util/ngfi/functions/src/index.ts"
+      ],
+      "@ngfi/infinite-scroll": [
+        "libs/util/ngfi/infinite-scroll/src/index.ts"
+      ],
+      "@ngfi/multi-lang": [
+        "libs/util/ngfi/multi-lang/src/index.ts"
+      ],
+      "@ngfi/state": [
+        "libs/util/ngfi/state/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

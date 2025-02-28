@@ -22,8 +22,7 @@ import {
   signInWithPopup,
   User as FBUser,
 } from '@firebase/auth';
-// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-import { firebaseApp } from '../../../../../../../../apps/conv-learning-manager/src/main';
+import { firebaseApp } from '../../utilities/firebaseApp';
 
 /**
  * Authentication Service
