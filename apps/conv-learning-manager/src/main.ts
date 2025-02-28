@@ -5,12 +5,13 @@ import { AppModule } from './app/app.module';
 
 import { environment } from './environments/environment.prod';
 import { initializeApp } from 'firebase/app';
+import { getAuth } from '@firebase/auth';
 
 if (environment.production) {
   enableProdMode();
 }
 
-initializeApp(environment.firebaseConfig);
+export const firebaseApp = initializeApp(environment.firebaseConfig);
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)

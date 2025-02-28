@@ -29,6 +29,7 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "@angular/service-worker": "^15.0.0",
+    "@firebase/auth": "^1.9.0",
     "@firebase/firestore-types": "^2.5.0",
     "@google-cloud/scheduler": "^4.0.1",
     "@google-cloud/tasks": "^4.0.1",
