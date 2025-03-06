@@ -2,19 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PortalModule } from '@angular/cdk/portal';
-import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatStepperModule } from '@angular/material/stepper';
 
-import { FlexLayoutModule, MaterialBricksModule, MaterialDesignModule, MaterialFormBricksModule } from '@iote/bricks-angular';
+import {
+  FlexLayoutModule,
+  MaterialBricksModule,
+  MaterialDesignModule,
+  MaterialFormBricksModule,
+} from '@iote/bricks-angular';
 import { MultiLangModule } from '@ngfi/multi-lang';
 
 import { StoryEditorStateModule } from '@app/state/convs-mgr/story-editor';
 
 import { ConvlPageModule } from '@app/elements/layout/page-convl';
-import { ToastModule } from '@app/elements/layout/toast'
+import { ToastModule } from '@app/elements/layout/toast';
 
 import { BlocksLibraryModule } from '@app/features/convs-mgr/stories/blocks/library/main';
-import { ConvsMgrAnchorBlockModule } from '@app/features/convs-mgr/stories/blocks/library/anchor-block'
+import { ConvsMgrAnchorBlockModule } from '@app/features/convs-mgr/stories/blocks/library/anchor-block';
 
 import { StoryEditorFrameComponent } from './components/editor-frame/editor-frame.component';
 import { BlocksLibraryComponent } from './components/blocks-library/blocks-library.component';
@@ -34,19 +39,27 @@ import { TrackCursorDirective } from './directives/track-cursor.directive';
 import { BlockCategoryPipe } from './components/pipes/block-category-pipe.pipe';
 import { StoryEditorMiniMapComponent } from './components/minimap/minimap.component';
 import { SaveStoryService } from './providers/save-story.service';
-
-
-
+import { StoryEditorOrderedBlocksComponent } from './components/orderedBlocks/story-editor-ordered-blocks.component';
 
 @NgModule({
   imports: [
-    CommonModule, MultiLangModule, PortalModule, InfiniteScrollModule,
-    MaterialDesignModule, FlexLayoutModule, MaterialBricksModule,
-    MaterialFormBricksModule, FormsModule, ReactiveFormsModule,
-    ConvlPageModule, ConvsMgrAnchorBlockModule,
-    BlocksLibraryModule, StoryEditorStateModule,
-    ConvlStoryEditorRouterModule, MatStepperModule,
-    ToastModule
+    CommonModule,
+    MultiLangModule,
+    PortalModule,
+    InfiniteScrollModule,
+    MaterialDesignModule,
+    FlexLayoutModule,
+    MaterialBricksModule,
+    MaterialFormBricksModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ConvlPageModule,
+    ConvsMgrAnchorBlockModule,
+    BlocksLibraryModule,
+    StoryEditorStateModule,
+    ConvlStoryEditorRouterModule,
+    MatStepperModule,
+    ToastModule,
   ],
 
   declarations: [
@@ -58,9 +71,14 @@ import { SaveStoryService } from './providers/save-story.service';
     PinchZoomDirective,
     TrackCursorDirective,
     BlockCategoryPipe,
-    StoryEditorMiniMapComponent
+    StoryEditorMiniMapComponent,
+    StoryEditorOrderedBlocksComponent,
   ],
 
-  providers: [StoryEditorInitialiserService, SaveStoryService, ManageChannelStoryLinkService],
+  providers: [
+    StoryEditorInitialiserService,
+    SaveStoryService,
+    ManageChannelStoryLinkService,
+  ],
 })
-export class ConvlStoryEditorModule { }
+export class ConvlStoryEditorModule {}
