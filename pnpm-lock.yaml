@@ -125,6 +125,9 @@ importers:
       firebase-tools:
         specifier: ^11.19.0
         version: 11.30.0(encoding@0.1.13)
+      google-libphonenumber:
+        specifier: ^3.2.40
+        version: 3.2.40
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -5368,6 +5371,10 @@ packages:
   google-gax@4.4.1:
     resolution: {integrity: sha512-Phyp9fMfA00J3sZbJxbbB4jC55b7DBjE3F6poyL3wKMEBVKA79q6BGuHcTiM28yOzVql0NDbRL8MLLh8Iwk9Dg==}
     engines: {node: '>=14'}
+
+  google-libphonenumber@3.2.40:
+    resolution: {integrity: sha512-bzGxX/vfggcV80LVcibki+JvR91x6zHpBpovDXSfmZUGn6uLzhbYXsWll2a80EG6qTmvf8lt7KZZ/pkMml8ckw==}
+    engines: {node: '>=0.10'}
 
   google-logging-utils@0.0.2:
     resolution: {integrity: sha512-NEgUnEcBiP5HrPzufUkBzJOD/Sxsco3rLNo1F1TNf7ieU8ryUzBhqba8r756CjLX7rn3fHl6iLEwPYuqpoKgQQ==}
@@ -17250,6 +17257,8 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+
+  google-libphonenumber@3.2.40: {}
 
   google-logging-utils@0.0.2: {}
 
