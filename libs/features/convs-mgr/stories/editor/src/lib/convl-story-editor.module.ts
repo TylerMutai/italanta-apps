@@ -40,6 +40,9 @@ import { BlockCategoryPipe } from './components/pipes/block-category-pipe.pipe';
 import { StoryEditorMiniMapComponent } from './components/minimap/minimap.component';
 import { SaveStoryService } from './providers/save-story.service';
 import { StoryEditorOrderedBlocksComponent } from './components/orderedBlocks/story-editor-ordered-blocks.component';
+import { StoryViewerPageComponent } from './pages/story-viewer/story-viewer.page';
+import { StoryViewerFrameComponent } from './components/viewer-frame/viewer-frame.component';
+import { StoryViewerInitialiserService } from './providers/story-viewer-initialiser.service';
 
 @NgModule({
   imports: [
@@ -64,8 +67,10 @@ import { StoryEditorOrderedBlocksComponent } from './components/orderedBlocks/st
 
   declarations: [
     StoryEditorPageComponent,
+    StoryViewerPageComponent,
     AddBotToChannelModal,
     StoryEditorFrameComponent,
+    StoryViewerFrameComponent,
     GroupedBlocksComponent,
     BlocksLibraryComponent,
     PinchZoomDirective,
@@ -77,6 +82,7 @@ import { StoryEditorOrderedBlocksComponent } from './components/orderedBlocks/st
 
   providers: [
     StoryEditorInitialiserService,
+    StoryViewerInitialiserService,
     SaveStoryService,
     ManageChannelStoryLinkService,
   ],

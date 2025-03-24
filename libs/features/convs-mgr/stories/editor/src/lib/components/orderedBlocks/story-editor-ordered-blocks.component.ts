@@ -1,11 +1,10 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { SubSink } from 'subsink';
-import { Observable, debounceTime } from 'rxjs'; //interval
+import { debounceTime, Observable } from 'rxjs'; //interval
 // import html2canvas from 'dom-to-image';
-
-import { StoryEditorState } from '@app/state/convs-mgr/story-editor';
 import { MINI_MAP_FACTOR } from '../../utils/frame-size';
+import { StoryViewerState } from '../../../../../../../../state/convs-mgr/story-editor/src/lib/model/story-viewer-state.model';
 
 @Component({
   selector: 'convl-ordered-blocks',
@@ -13,21 +12,16 @@ import { MINI_MAP_FACTOR } from '../../utils/frame-size';
   styleUrls: ['./story-editor-ordered-blocks.component.scss'],
 })
 export class StoryEditorOrderedBlocksComponent implements OnInit, OnDestroy {
-  private _sBs = new SubSink();
-
   @Input() editorContainer: ElementRef<HTMLElement>;
-
-  @Input() frameState$: Observable<StoryEditorState>;
+  @Input() frameState$: Observable<StoryViewerState>;
   @Input() viewport$: Observable<DOMRect>;
   @Input() zoomFactor = 1;
-
   blocks: DOMRect[];
-
   /** Base64 encoded background image */
   backgroundImg: string;
-
   /** Representation of the viewport within the larger editor frame */
   viewport: DOMRect;
+  private _sBs = new SubSink();
 
   ngOnInit() {
     // Whenever the frame changes, take a screenshot of the frame div
@@ -46,8 +40,8 @@ export class StoryEditorOrderedBlocksComponent implements OnInit, OnDestroy {
             x: block.position.x / MINI_MAP_FACTOR,
             y: block.position.y / MINI_MAP_FACTOR,
 
-            width: 250 / MINI_MAP_FACTOR,
-            height: 200 / MINI_MAP_FACTOR,
+            width: 350 / MINI_MAP_FACTOR,
+            height: 300 / MINI_MAP_FACTOR,
           } as DOMRect)
       );
     });
@@ -57,9 +51,8 @@ export class StoryEditorOrderedBlocksComponent implements OnInit, OnDestroy {
     //   interval(10000).subscribe(async () => {
     // const el = this.editorContainer.nativeElement;
     // // Take a screenshot of the frame div to use as background of the mini map.
-    // const viewpaneImg = await html2canvas.toJpeg(el, { quality: 0.1,  height: STORY_EDITOR_HEIGHT * this.zoomFactor, width: STORY_EDITOR_WIDTH * this.zoomFactor });
-    // this.backgroundImg = `url(${viewpaneImg})`;
-    // });
+    // const viewpaneImg = await html2canvas.toJpeg(el, { quality: 0.1,  height: STORY_EDITOR_HEIGHT * this.zoomFactor,
+    // width: STORY_EDITOR_WIDTH * this.zoomFactor }); this.backgroundImg = `url(${viewpaneImg})`; });
 
     // Listen to viewport changes.
     //  Draw the viewport inside the minimap to show position
@@ -78,7 +71,9 @@ export class StoryEditorOrderedBlocksComponent implements OnInit, OnDestroy {
   }
 
   getPosition() {
-    if (!this.viewport) return '';
+    if (!this.viewport) {
+      return '';
+    }
 
     return {
       position: 'absolute',
