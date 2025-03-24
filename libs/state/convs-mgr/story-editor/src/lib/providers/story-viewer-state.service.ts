@@ -120,11 +120,6 @@ export class StoryViewerStateService {
                     traversedConnections.add(connection.id);
                     traversedBlocks.add(blockId);
                   }
-                  console.log('connection.targetId: ', connection.targetId);
-                  console.log('connectionsQueue: ', connectionsQueue);
-                  console.log('traversedBlocks: ', traversedBlocks);
-                  console.log('traversedConnections: ', traversedConnections);
-                  console.log('\n');
                 }
                 blocks.push(_blocks);
               }
