@@ -1,5 +1,5 @@
 <convl-page class="conv" [breadcrumbs]="breadcrumbs" [title]="pageName" [nomarg]="true">
-  
+
   <!-- Main body page -->
   <div class="story-editor" fxFlexFill>
 
@@ -38,7 +38,8 @@
             <mat-icon>zoom_out</mat-icon>
           </button>
 
-          <input style="margin-right: 0px;" [formControl]="zoomLevel" min="25" max="100" [disabled]="true" type="number" />
+          <input style="margin-right: 0px;" [formControl]="zoomLevel" min="25" max="100" [disabled]="true"
+                 type="number" />
 
           <button class="zoom-btn" [disabled]="zoomLevel.value >= 100" mat-mini-fab (click)="increaseZoom()">
             <mat-icon>zoom_in</mat-icon>
@@ -46,48 +47,57 @@
         </div>
 
         <div class="flex-spacer"></div>
-        
+
         <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
           <!-- Save button -->
           <button [disabled]="hasEmptyFields || !stateSaved" (click)="save()" mat-flat-button class="subbar-btn">
-            <span *ngIf="stateSaved; else saving"> {{'PAGE-CONTENT.TOP-BAR.SAVE-STORY' | transloco }} </span>
+            <span *ngIf="stateSaved; else saving"> {{ 'PAGE-CONTENT.TOP-BAR.SAVE-STORY' | transloco }} </span>
             <ng-template #saving>
               <span fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
-                <span> {{'PAGE-CONTENT.TOP-BAR.SAVE-STORY' | transloco }} </span>
+                <span> {{ 'PAGE-CONTENT.TOP-BAR.SAVE-STORY' | transloco }} </span>
                 <mat-spinner diameter="20"></mat-spinner>
               </span>
             </ng-template>
+          </button>
+
+          <!-- Render button -->
+          <button (click)="navigateToRenderingPage()" mat-flat-button class="subbar-btn">
+            <span> Render </span>
           </button>
 
         </div>
       </div>
 
       <div class="error-count" *ngIf="errors.length>0" fxFlex fxLayout="row" fxLayoutAlign="end center">
-        <div class="error-msg">{{'TOAST.ERROR-COUNT' | transloco}} <span class="error-count-length">{{errors.length}}</span> {{'TOAST.ERRORS' | transloco}}</div>
-        <div class="save-msg"><a class="save-anyway" (click)="saveWithErrors()">{{'PAGE-CONTENT.TOP-BAR.SAVE-WITH-ERRORS' | transloco }}</a></div>
+        <div class="error-msg">{{ 'TOAST.ERROR-COUNT' | transloco }} <span
+          class="error-count-length">{{ errors.length }}</span> {{ 'TOAST.ERRORS' | transloco }}
+        </div>
+        <div class="save-msg"><a class="save-anyway"
+                                 (click)="saveWithErrors()">{{ 'PAGE-CONTENT.TOP-BAR.SAVE-WITH-ERRORS' | transloco }}</a>
+        </div>
       </div>
 
       <convl-story-editor-frame fxFlex="100"
-              (frameLoaded)="onFrameViewLoaded($event)"
-              (zoomed)="setZoom($event * 100, true)"
-        
-          #storyEditorFrame> 
+                                (frameLoaded)="onFrameViewLoaded($event)"
+                                (zoomed)="setZoom($event * 100, true)"
+
+                                #storyEditorFrame>
       </convl-story-editor-frame>
-      
+
     </div>
   </div>
 </convl-page>
 
 <!-- Error handler messages (fixed overlay) -->
 <div *ngIf="errors.length>0" class="error-toast">
-  <app-toast 
-      *ngFor="let error of shownErrors" 
-      [error]="error" 
-      [messageType]="toastType"
-      color="rgba(217, 25, 25, 0.70)" 
-      iconClass="fas fa-exclamation-circle" 
-      (closeToast)="closeErrorToast(error)" 
-      (scrollToError)="scrollTo(error)"
-    >
+  <app-toast
+    *ngFor="let error of shownErrors"
+    [error]="error"
+    [messageType]="toastType"
+    color="rgba(217, 25, 25, 0.70)"
+    iconClass="fas fa-exclamation-circle"
+    (closeToast)="closeErrorToast(error)"
+    (scrollToError)="scrollTo(error)"
+  >
   </app-toast>
 </div>
