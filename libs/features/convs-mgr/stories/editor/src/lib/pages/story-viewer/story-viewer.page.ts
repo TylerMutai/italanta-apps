@@ -127,7 +127,20 @@ export class StoryViewerPageComponent implements OnInit, OnDestroy {
     this._sb.sink = this.loading
       .pipe(filter((loading) => !loading))
       .subscribe(() => {
-        this.frame.init(this.state);
+        this.frame.init(this.state).then(/*() => {
+          const node = document.getElementById('editor-frame');
+          if (node) {
+            toBlob(node)
+              .then((blob) => {
+                if (blob) {
+                  FileSaver.saveAs(blob, 'innovations-flow.png');
+                }
+              })
+              .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+              });
+          }
+        }*/);
       });
 
     this._cd.detectChanges();
@@ -201,7 +214,7 @@ export class StoryViewerPageComponent implements OnInit, OnDestroy {
   // Section - Zoom
 
   increaseZoom() {
-    if (this.zoomLevel.value >= 100) {
+    if (this.zoomLevel.value >= 150) {
       return;
     }
 
