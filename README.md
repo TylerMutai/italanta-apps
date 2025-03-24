@@ -338,3 +338,6 @@ Run the project
 ```
 
 #### Note: it is recommended to always keep your fork up to date with the original repository, by syncing your fork (explained in detail on contributing section).
+
+### Deployment
+`firebase deploy --only hosting`
