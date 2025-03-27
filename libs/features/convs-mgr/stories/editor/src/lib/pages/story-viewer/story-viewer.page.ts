@@ -126,8 +126,8 @@ export class StoryViewerPageComponent implements OnInit, OnDestroy {
     // After both frame AND data are loaded (hence the subscribe), draw frame blocks on the frame.
     this._sb.sink = this.loading
       .pipe(filter((loading) => !loading))
-      .subscribe(() => {
-        this.frame.init(this.state).then(/*() => {
+      .subscribe(/*() => {
+        this.frame.init(this.state).then(() => {
           const node = document.getElementById('editor-frame');
           if (node) {
             toBlob(node)
@@ -140,8 +140,8 @@ export class StoryViewerPageComponent implements OnInit, OnDestroy {
                 console.error('oops, something went wrong!', error);
               });
           }
-        }*/);
-      });
+        });
+      }*/);
 
     this._cd.detectChanges();
   }
